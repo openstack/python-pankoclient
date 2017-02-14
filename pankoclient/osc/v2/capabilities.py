@@ -15,10 +15,10 @@
 
 """Panko v2 Capabilities action implementations"""
 
-from cliff import show
+from osc_lib.command import command
 
 
-class CliCapabilitiesList(show.ShowOne):
+class CliCapabilitiesList(command.ShowOne):
     """List capabilities for event service"""
 
     def take_action(self, parsed_args):

@@ -48,3 +48,11 @@ def get_pagination_options(limit=None, marker=None, sorts=None):
     for sort in sorts or []:
         options.append("sort=%s" % urllib_parse.quote(sort))
     return "&".join(options)
+
+
+def filtersdict_to_url(filters):
+    urls = []
+    for k, v in sorted(filters.items()):
+        url = "q.field=%s&q.op=eq&q.value=%s" % (k, v)
+        urls.append(url)
+    return '&'.join(urls)

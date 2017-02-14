@@ -1,12 +1,11 @@
 The :program:`panko` shell utility
-=========================================
+==================================
 
 .. program:: panko
 .. highlight:: bash
 
 The :program:`panko` shell utility interacts with Panko API
-from the command line. It supports the entirety of the Panko API excluding
-deprecated combination alarms.
+from the command line.
 
 You'll need to provide :program:`panko` with your OpenStack credentials.
 You can do this with the :option:`--os-username`, :option:`--os-password`,
@@ -65,23 +64,4 @@ command.
 Examples
 --------
 
-Create an alarm::
-
-    panko alarm create -t threshold --name alarm1 -m cpu_util --threshold 5
-
-List alarms::
-
-    panko alarm list
-
-List alarm with query parameters::
-
-    panko alarm list --query "state=alarm and type=threshold"
-
-Show an alarm's history::
-
-    panko alarm-history show <ALARM_ID>
-
-Search alarm history data::
-
-    panko --debug alarm-history search --query 'timestamp>"2016-03-09T01:22:35"'
-
+#TODO

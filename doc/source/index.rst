@@ -15,7 +15,7 @@ Panko API.
 
    This is a new client to interact with Panko API. There may be differences
    in functionality, syntax, and command line output when compared with the
-   alarm functionality provided by ceilometerclient.
+   event functionality provided by ceilometerclient.
 
 
 .. seealso::

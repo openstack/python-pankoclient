@@ -14,6 +14,7 @@
 #
 
 from pankoclient.v2 import capabilities
+from pankoclient.v2 import events
 from pankoclient.common import http
 
 
@@ -24,3 +25,4 @@ class Client(object):
         """Initialize a new client for the Panko v1 API."""
         self.http_client = http._construct_http_client(*args, **kwargs)
         self.capabilities = capabilities.CapabilitiesManager(self.http_client)
+        self.event = events.EventManager(self.http_client)
