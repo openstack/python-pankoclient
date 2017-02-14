@@ -14,10 +14,14 @@
 from pankoclient.common import base
 
 
+class Capabilities(base.Resource):
+    pass
+
+
 class CapabilitiesManager(base.ManagerWithFind):
-    resource_class = None
+    resource_class = Capabilities
 
     def list(self):
         """List capabilities"""
         cap_url = "v2/capabilities/"
-        return self._get(cap_url).json()
+        return self._get(cap_url)

@@ -24,4 +24,4 @@ class CliCapabilitiesList(show.ShowOne):
     def take_action(self, parsed_args):
         ac = self.app.client_manager.event
         caps = ac.capabilities.list()
-        return self.dict2columns(caps)
+        return self.dict2columns(caps._info)
