@@ -13,8 +13,8 @@
 #   under the License.
 #
 
+from pankoclient.v2 import capabilities
 from pankoclient.common import http
-from pankoclient.v2 import events
 
 
 class Client(object):
@@ -23,5 +23,4 @@ class Client(object):
     def __init__(self, *args, **kwargs):
         """Initialize a new client for the Panko v1 API."""
         self.http_client = http._construct_http_client(*args, **kwargs)
-        self.event = events.EventManager(
-            self.http_client)
+        self.capabilities = capabilities.CapabilitiesManager(self.http_client)

@@ -22,6 +22,6 @@ class CliCapabilitiesList(show.ShowOne):
     """List capabilities for event service"""
 
     def take_action(self, parsed_args):
-        ac = self.app.client_manager.alarming
+        ac = self.app.client_manager.event
         caps = ac.capabilities.list()
         return self.dict2columns(caps)
