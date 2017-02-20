@@ -51,4 +51,3 @@ class EventManager(base.ManagerWithFind):
         """
         path = '/v2/events/%s'
         return self._get(path % message_id)
-

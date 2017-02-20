@@ -140,4 +140,3 @@ class FakeHTTPResponse(object):
 
     def json(self):
         return jsonutils.loads(self.content)
-

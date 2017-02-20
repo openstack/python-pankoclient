@@ -14,8 +14,8 @@
 #
 
 from pankoclient.v2 import capabilities
-from pankoclient.v2 import events
 from pankoclient.common import http
+from pankoclient.v2 import events
 
 
 class Client(object):
