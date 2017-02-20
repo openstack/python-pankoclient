@@ -24,11 +24,11 @@ class TestBase(utils.TestCommand):
     pass
 
 
-class TestBaremetalComputeV1(TestBase):
-    """Test case base class for the unit tests of Baremetal Compute V1 API."""
+class TestEventV2(TestBase):
+    """Test case base class for the unit tests of Event server V1 API."""
 
     def setUp(self):
-        super(TestBaremetalComputeV1, self).setUp()
+        super(TestEventV2, self).setUp()
 
-        fake_client = fakes.FakeBaremetalComputeV1Client()
+        fake_client = fakes.FakeTestEventV2Client()
         self.app.client_manager.event = fake_client

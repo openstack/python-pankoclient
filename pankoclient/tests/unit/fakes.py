@@ -50,7 +50,7 @@ def create_resource_manager():
     return FakeManager()
 
 
-class FakeBaremetalComputeV1Client(object):
+class FakeTestEventV2Client(object):
 
     def __init__(self, **kwargs):
         self.fake_http_client = mock.Mock()

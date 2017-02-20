@@ -22,7 +22,7 @@ class Client(object):
     """Client for the Panko v2 API."""
 
     def __init__(self, *args, **kwargs):
-        """Initialize a new client for the Panko v1 API."""
+        """Initialize a new client for the Panko v2 API."""
         self.http_client = http._construct_http_client(*args, **kwargs)
         self.capabilities = capabilities.CapabilitiesManager(self.http_client)
         self.event = events.EventManager(self.http_client)

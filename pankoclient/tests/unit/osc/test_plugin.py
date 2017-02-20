@@ -21,9 +21,9 @@ from pankoclient.osc import plugin
 from pankoclient.tests.unit import base
 
 
-class TestBaremetalComputePlugin(base.TestBase):
+class TestEventPlugin(base.TestBase):
 
-    @mock.patch('pankoclient.v1.client.Client')
+    @mock.patch('pankoclient.v2.client.Client')
     def test_make_client_with_session(self, panko_client):
         instance = mock.Mock()
         instance._api_version = {
@@ -50,7 +50,7 @@ class TestBaremetalComputePlugin(base.TestBase):
             session='fake_session',
         )
 
-    @mock.patch('pankoclient.v1.client.Client')
+    @mock.patch('pankoclient.v2.client.Client')
     def test_make_client_no_session(self, panko_client):
         instance = mock.Mock()
         instance._api_version = {
