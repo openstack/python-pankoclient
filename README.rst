@@ -2,12 +2,12 @@
 Python bindings to the OpenStack Panko API
 ==========================================
 
-.. image:: https://img.shields.io/pypi/v/python-pankoclient.svg
-    :target: https://pypi.python.org/pypi/python-pankoclient/
+.. image:: https://img.shields.io/pypi/v/pankoclient.svg
+    :target: https://pypi.python.org/pypi/pankoclient/
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/dm/python-pankoclient.svg
-    :target: https://pypi.python.org/pypi/python-pankoclient/
+.. image:: https://img.shields.io/pypi/dm/pankoclient.svg
+    :target: https://pypi.python.org/pypi/pankoclient/
     :alt: Downloads
 
 This is a client library for Panko built on the Panko API. It provides a
@@ -22,7 +22,7 @@ command-line tool (``openstack event``).
 * `Bugs`_ - issue tracking
 * `Source`_
 
-.. _PyPi: https://pypi.python.org/pypi/python-pankoclient
+.. _PyPi: https://pypi.python.org/pypi/pankoclient
 .. _Online Documentation: http://docs.openstack.org/developer/python-pankoclient
 .. _Launchpad project: https://launchpad.net/python-pankoclient
 .. _Blueprints: https://blueprints.launchpad.net/python-pankoclient
