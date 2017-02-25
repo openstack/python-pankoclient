@@ -19,6 +19,10 @@ class Event(base.Resource):
     pass
 
 
+class EventType(base.Resource):
+    pass
+
+
 class EventManager(base.ManagerWithFind):
     resource_class = Event
 
@@ -51,3 +55,11 @@ class EventManager(base.ManagerWithFind):
         """
         path = '/v2/events/%s'
         return self._get(path % message_id)
+
+
+class EventTypeManager(base.ManagerWithFind):
+    resource_class = EventType
+
+    def list(self):
+        url = '/v2/event_types/'
+        return self._list(url)

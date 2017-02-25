@@ -85,3 +85,12 @@ class EventShow(command.ShowOne):
         data = copy.deepcopy(event._info)
         data.update({'traits': json.dumps(data['traits'], indent=4)})
         return self.dict2columns(data)
+
+
+class EventTypeList(command.Lister):
+    """List event types"""
+
+    def take_action(self, parsed_args):
+        ac = self.app.client_manager.event
+        event_types = ac.event_type.list()
+        return ('Event Type',), ((t,)for t in event_types)

@@ -19,6 +19,7 @@ from requests import Response
 
 from pankoclient.common import base
 from pankoclient.v2 import capabilities
+from pankoclient.v2 import events
 
 
 # fake request id
@@ -56,6 +57,7 @@ class FakeTestEventV2Client(object):
         self.fake_http_client = mock.Mock()
         self.capabilities = capabilities.CapabilitiesManager(
             self.fake_http_client)
+        self.event_type = events.EventTypeManager(self.fake_http_client)
 
 
 class FakeHTTPClient(object):
