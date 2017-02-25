@@ -13,8 +13,8 @@
 #   under the License.
 #
 
-from pankoclient.v2 import capabilities
 from pankoclient.common import http
+from pankoclient.v2 import capabilities
 from pankoclient.v2 import events
 
 
