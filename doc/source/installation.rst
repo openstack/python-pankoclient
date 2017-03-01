@@ -4,5 +4,5 @@ Installation
 
 At the command line::
 
-    $ pip install python-pankoclient
+    $ pip install pankoclient
 

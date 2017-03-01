@@ -18,4 +18,4 @@ import pbr.version
 
 
 __version__ = pbr.version.VersionInfo(
-    'python-pankoclient').version_string()
+    'pankoclient').version_string()
