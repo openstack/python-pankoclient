@@ -19,7 +19,6 @@ import copy
 import json
 
 from osc_lib.command import command
-from osc_lib import utils
 
 
 class EventList(command.Lister):
@@ -60,11 +59,22 @@ class EventList(command.Lister):
         events = ac.event.list(
             filters=filters, sorts=parsed_args.sort,
             limit=parsed_args.limit, marker=parsed_args.marker)
-        columns = ('event_type', 'generated', 'message_id', 'traits')
-        formatters = {'traits': lambda s: json.dumps(s, indent=4)}
-        return (columns,
-                (utils.get_item_properties(
-                    s, columns, formatters=formatters) for s in events))
+        columns = ('event_type', 'generated', 'message_id', 'traits:name',
+                   'traits:value', 'traits:type')
+        rows = []
+        for event in events:
+            traits_type = [t['type'] for t in event.traits]
+            traits_name = [t['name'] for t in event.traits]
+            traits_value = [t['value'] for t in event.traits]
+            [getattr(event, item, '') for item in columns]
+            row = (getattr(event, 'event_type', ''),
+                   getattr(event, 'generated', ''),
+                   getattr(event, 'message_id', ''),
+                   '\n'.join(traits_name),
+                   '\n'.join(traits_value),
+                   '\n'.join(traits_type),)
+            rows.append(row)
+        return columns, tuple(rows)
 
 
 class EventShow(command.ShowOne):
