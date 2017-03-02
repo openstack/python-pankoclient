@@ -26,3 +26,4 @@ class Client(object):
         self.http_client = http._construct_http_client(*args, **kwargs)
         self.capabilities = capabilities.CapabilitiesManager(self.http_client)
         self.event = events.EventManager(self.http_client)
+        self.event_type = events.EventTypeManager(self.http_client)
