@@ -4,12 +4,12 @@
    contain the root `toctree` directive.
 
 Python bindings to the Panko API
-===============================
+================================
 
 This is a client for Panko API. There's :doc:`a Python API
-<api>` (the :mod:`pankoclient` module), and a :doc:`command-line script
-<shell>` (installed as :program:`panko`). Each implements the entire
-Panko API.
+<api>` (the :mod:`pankoclient` module), and a set of event related commands
+which are integrated with the OSC CLI tool. Each implements the entire Panko
+API.
 
 .. warning::
 
@@ -33,7 +33,7 @@ Contents:
    :maxdepth: 2
 
    installation
-   shell
+   osc_integrated_commands
    api
    contributing
 
