@@ -16,8 +16,6 @@ from six.moves.urllib import parse as urllib_parse
 
 import logging
 
-from pankoclient.common.i18n import _LE
-
 LOG = logging.getLogger(__name__)
 
 
@@ -28,12 +26,12 @@ def get_response_body(resp):
         try:
             body = resp.json()
         except ValueError:
-            LOG.error(_LE('Could not decode response body as JSON'))
+            LOG.error('Could not decode response body as JSON')
     elif 'application/octet-stream' in content_type:
         try:
             body = resp.body()
         except ValueError:
-            LOG.error(_LE('Could not decode response body as raw'))
+            LOG.error('Could not decode response body as raw')
     else:
         body = None
     return body
