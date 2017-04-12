@@ -19,6 +19,7 @@ import copy
 import json
 
 from osc_lib.command import command
+from osc_lib import utils
 
 
 class EventList(command.Lister):
@@ -104,3 +105,29 @@ class EventTypeList(command.Lister):
         ac = self.app.client_manager.event
         event_types = ac.event_type.list()
         return ('Event Type',), ((t,)for t in event_types)
+
+
+class EventTraitList(command.Lister):
+    """List event traits of a specified event type and trait name"""
+
+    def get_parser(self, prog_name):
+        parser = super(EventTraitList, self).get_parser(prog_name)
+        parser.add_argument(
+            'type_name',
+            metavar='<EVENT_TYPE>',
+            help='Type of the event for which traits will listed.'
+        )
+        parser.add_argument(
+            'trait_name',
+            metavar='<TRAIT_NAME>',
+            help='The name of the trait to list.'
+        )
+        return parser
+
+    def take_action(self, parsed_args):
+        ac = self.app.client_manager.event
+        event_traits = ac.event_trait.list(
+            parsed_args.type_name, parsed_args.trait_name)
+        columns = ('name', 'value', 'type')
+        return (columns,
+                (utils.get_item_properties(t, columns) for t in event_traits))

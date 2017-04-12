@@ -58,6 +58,7 @@ class FakeTestEventV2Client(object):
         self.capabilities = capabilities.CapabilitiesManager(
             self.fake_http_client)
         self.event_type = events.EventTypeManager(self.fake_http_client)
+        self.event_trait = events.EventTraitsManager(self.fake_http_client)
 
 
 class FakeHTTPClient(object):

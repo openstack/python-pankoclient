@@ -32,3 +32,25 @@ class TestEventTypeList(test_base.TestEventV2):
         parsed_args = self.check_parser(self.cmd, arglist, verifylist)
         self.cmd.take_action(parsed_args)
         mock_list.assert_called_once_with('/v2/event_types/')
+
+
+@mock.patch.object(events_mgr.EventTraitsManager, '_list')
+class TestEventTraitsList(test_base.TestEventV2):
+    def setUp(self):
+        super(TestEventTraitsList, self).setUp()
+        self.cmd = events.EventTraitList(self.app, None)
+
+    def test_event_traits_list(self, mock_list):
+        arglist = [
+            'event_type1',
+            'trait_name1'
+        ]
+        verifylist = [
+            ('type_name', 'event_type1'),
+            ('trait_name', 'trait_name1'),
+        ]
+        parsed_args = self.check_parser(self.cmd, arglist, verifylist)
+        self.cmd.take_action(parsed_args)
+        expected_url = '/v2/event_types/%s/traits/%s' % (
+            parsed_args.type_name, parsed_args.trait_name)
+        mock_list.assert_called_once_with(expected_url)
