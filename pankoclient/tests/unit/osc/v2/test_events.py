@@ -54,3 +54,22 @@ class TestEventTraitsList(test_base.TestEventV2):
         expected_url = '/v2/event_types/%s/traits/%s' % (
             parsed_args.type_name, parsed_args.trait_name)
         mock_list.assert_called_once_with(expected_url)
+
+
+@mock.patch.object(events_mgr.EventTraitDescriptionManager, '_list')
+class TestEventTraitDescription(test_base.TestEventV2):
+    def setUp(self):
+        super(TestEventTraitDescription, self).setUp()
+        self.cmd = events.EventTraitDescription(self.app, None)
+
+    def test_event_type_traits_description(self, mock_list):
+        arglist = [
+            'event_type1',
+        ]
+        verifylist = [
+            ('type_name', 'event_type1'),
+        ]
+        parsed_args = self.check_parser(self.cmd, arglist, verifylist)
+        self.cmd.take_action(parsed_args)
+        expected_url = '/v2/event_types/%s/traits/' % parsed_args.type_name
+        mock_list.assert_called_once_with(expected_url)

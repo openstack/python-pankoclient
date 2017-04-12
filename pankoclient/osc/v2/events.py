@@ -131,3 +131,24 @@ class EventTraitList(command.Lister):
         columns = ('name', 'value', 'type')
         return (columns,
                 (utils.get_item_properties(t, columns) for t in event_traits))
+
+
+class EventTraitDescription(command.Lister):
+    """List trait info for an event type."""
+
+    def get_parser(self, prog_name):
+        parser = super(EventTraitDescription, self).get_parser(prog_name)
+        parser.add_argument(
+            'type_name',
+            metavar='<EVENT_TYPE>',
+            help='Type of the event for which traits definitions will be '
+                 'shown.'
+        )
+        return parser
+
+    def take_action(self, parsed_args):
+        ac = self.app.client_manager.event
+        event_traits = ac.event_trait_description.list(parsed_args.type_name)
+        columns = ('name', 'type')
+        return (columns,
+                (utils.get_item_properties(t, columns) for t in event_traits))

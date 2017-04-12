@@ -27,6 +27,10 @@ class EventTrait(base.Resource):
     pass
 
 
+class TraitDescription(base.Resource):
+    pass
+
+
 class EventManager(base.ManagerWithFind):
     resource_class = Event
 
@@ -74,4 +78,12 @@ class EventTraitsManager(base.ManagerWithFind):
 
     def list(self, event_type, trait_name):
         url = '/v2/event_types/%s/traits/%s' % (event_type, trait_name)
+        return self._list(url)
+
+
+class EventTraitDescriptionManager(base.ManagerWithFind):
+    resource_class = TraitDescription
+
+    def list(self, event_type):
+        url = '/v2/event_types/%s/traits/' % event_type
         return self._list(url)

@@ -28,3 +28,5 @@ class Client(object):
         self.event = events.EventManager(self.http_client)
         self.event_type = events.EventTypeManager(self.http_client)
         self.event_trait = events.EventTraitsManager(self.http_client)
+        self.event_trait_description = events.EventTraitDescriptionManager(
+            self.http_client)
