@@ -19,7 +19,7 @@ import mock
 import six
 
 from pankoclient.common import base
-from pankoclient.common import exceptions
+from pankoclient import exceptions
 from pankoclient.tests.unit import base as test_base
 from pankoclient.tests.unit import fakes
 

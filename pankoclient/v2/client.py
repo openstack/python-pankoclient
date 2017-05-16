@@ -13,17 +13,22 @@
 #   under the License.
 #
 
-from pankoclient.common import http
+from pankoclient import client
 from pankoclient.v2 import capabilities
 from pankoclient.v2 import events
 
 
 class Client(object):
-    """Client for the Panko v2 API."""
+    """Client for the Panko v2 API
 
-    def __init__(self, *args, **kwargs):
+    :param string session: session
+    :type session: :py:class:`keystoneauth.adapter.Adapter`
+    """
+
+    def __init__(self, session=None, service_type='event', **kwargs):
         """Initialize a new client for the Panko v2 API."""
-        self.http_client = http._construct_http_client(*args, **kwargs)
+        self.http_client = client.SessionClient(
+            session, service_type=service_type, **kwargs)
         self.capabilities = capabilities.CapabilitiesManager(self.http_client)
         self.event = events.EventManager(self.http_client)
         self.event_type = events.EventTypeManager(self.http_client)

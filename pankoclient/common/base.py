@@ -23,7 +23,7 @@ import copy
 from requests import Response
 import six
 
-from pankoclient.common import exceptions
+from pankoclient import exceptions
 
 
 def getid(obj):
