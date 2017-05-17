@@ -15,9 +15,9 @@
 
 import mock
 
-from pankoclient.osc.v2 import events
 from pankoclient.tests.unit import base as test_base
 from pankoclient.v2 import events as events_mgr
+from pankoclient.v2 import events_cli as events
 
 
 @mock.patch.object(events_mgr.EventTypeManager, '_list')

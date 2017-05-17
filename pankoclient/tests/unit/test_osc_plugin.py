@@ -17,7 +17,7 @@ import mock
 
 from osc_lib.tests import fakes
 
-from pankoclient.osc import plugin
+from pankoclient import osc as plugin
 from pankoclient.tests.unit import base
 
 
