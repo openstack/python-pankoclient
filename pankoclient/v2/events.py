@@ -12,7 +12,7 @@
 #    under the License.
 
 from pankoclient.common import base
-from pankoclient.common import utils
+from pankoclient import utils
 
 
 class Event(base.Resource):

@@ -14,28 +14,6 @@
 #
 from six.moves.urllib import parse as urllib_parse
 
-import logging
-
-LOG = logging.getLogger(__name__)
-
-
-def get_response_body(resp):
-    body = resp.content
-    content_type = resp.headers.get('Content-Type', '')
-    if 'application/json' in content_type:
-        try:
-            body = resp.json()
-        except ValueError:
-            LOG.error('Could not decode response body as JSON')
-    elif 'application/octet-stream' in content_type:
-        try:
-            body = resp.body()
-        except ValueError:
-            LOG.error('Could not decode response body as raw')
-    else:
-        body = None
-    return body
-
 
 def get_pagination_options(limit=None, marker=None, sorts=None):
     options = []
