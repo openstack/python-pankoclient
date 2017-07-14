@@ -11,8 +11,8 @@ command tool.
 
 To configure the environment variables, see `openstack program`_.
 
-.. _OpenStackClient: https://docs.openstack.org/developer/python-openstackclient
-.. _openstack program: https://docs.openstack.org/developer/python-openstackclient/man/openstack.html
+.. _OpenStackClient: https://docs.openstack.org/python-openstackclient/latest/
+.. _openstack program: https://docs.openstack.org/python-openstackclient/latest/cli/man/openstack.html
 
 Examples
 --------

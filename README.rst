@@ -23,7 +23,7 @@ command-line tool (``openstack event``).
 * `Source`_
 
 .. _PyPi: https://pypi.python.org/pypi/pankoclient
-.. _Online Documentation: http://docs.openstack.org/developer/python-pankoclient
+.. _Online Documentation: https://docs.openstack.org/python-pankoclient/latest/
 .. _Launchpad project: https://launchpad.net/python-pankoclient
 .. _Blueprints: https://blueprints.launchpad.net/python-pankoclient
 .. _Bugs: https://bugs.launchpad.net/python-pankoclient

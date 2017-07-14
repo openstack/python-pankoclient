@@ -24,7 +24,7 @@ API.
     least -- to get an idea of the concepts. By understanding the concepts
     this library should make more sense.
 
-    __ http://docs.openstack.org/developer/panko/
+    __ https://docs.openstack.org/panko/latest/
 
 
 Contents:
