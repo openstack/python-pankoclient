@@ -13,6 +13,7 @@
 
 from keystoneauth1 import adapter
 from oslo_utils import importutils
+from osprofiler import web
 
 from pankoclient import exceptions
 
@@ -30,6 +31,7 @@ class SessionClient(adapter.Adapter):
         # NOTE(sileht): The standard call raises errors from
         # keystoneauth, where we need to raise the pankoclient errors.
         raise_exc = kwargs.pop('raise_exc', True)
+        kwargs['headers'].update(web.get_trace_id_headers())
         resp = super(SessionClient, self).request(url,
                                                   method,
                                                   raise_exc=False,
