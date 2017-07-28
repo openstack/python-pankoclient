@@ -6,3 +6,4 @@ python-pankoclient Release Notes
    :maxdepth: 1
 
    unreleased
+   pike
