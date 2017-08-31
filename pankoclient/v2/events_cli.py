@@ -36,11 +36,11 @@ class EventList(command.Lister):
     def get_parser(self, prog_name):
         parser = super(EventList, self).get_parser(prog_name)
         parser.add_argument('--filter', dest='filter',
-                            metavar='<KEY1=VALUE1;KEY2=VALUE2...>',
+                            metavar='<KEY>=<VALUE>',
                             type=self.split_filter_param,
                             action='append',
-                            help='Filter parameters to apply on'
-                                 ' returned events.')
+                            help='Filter parameters to apply on returned '
+                                 'events. (can be applied multiple times)')
         parser.add_argument("--limit", type=int, metavar="<LIMIT>",
                             help="Number of events to return "
                                  "(Default is server default)")
