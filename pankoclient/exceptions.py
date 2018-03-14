@@ -165,14 +165,17 @@ def from_response(response, url, method=None):
 
     if "retry-after" in response.headers:
         kwargs['retry_after'] = response.headers.get('retry-after')
-
     if content_type == "application/json":
         try:
             body = response.json()
         except ValueError:
             pass
         else:
-            desc = body.get('error_message', {}).get('faultstring')
+            error_message = body.get('error_message', {})
+            try:
+                desc = error_message.get('faultstring')
+            except AttributeError:
+                desc = error_message
             for enhanced_cls in enhanced_classes:
                 if enhanced_cls.match.match(desc):
                     cls = enhanced_cls
