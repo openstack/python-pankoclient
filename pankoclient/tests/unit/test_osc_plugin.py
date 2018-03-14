@@ -43,10 +43,7 @@ class TestEventPlugin(base.TestBase):
             interface=fakes.INTERFACE,
         )
         panko_client.assert_called_once_with(
-            endpoint=mock.sentinel.ep,
-            auth_url=fakes.AUTH_URL,
-            region_name=fakes.REGION_NAME,
-            username=fakes.USERNAME,
+            endpoint_override=mock.sentinel.ep,
             session='fake_session',
         )
 
@@ -71,9 +68,6 @@ class TestEventPlugin(base.TestBase):
             interface=fakes.INTERFACE,
         )
         panko_client.assert_called_once_with(
-            endpoint=mock.sentinel.ep,
-            auth_url=fakes.AUTH_URL,
-            region_name=fakes.REGION_NAME,
-            username=fakes.USERNAME,
-            token=fakes.AUTH_TOKEN,
+            endpoint_override=mock.sentinel.ep,
+            session=None
         )

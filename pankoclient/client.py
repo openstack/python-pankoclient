@@ -37,4 +37,4 @@ class SessionClient(adapter.Adapter):
 
         if raise_exc and resp.status_code >= 400:
             raise exceptions.from_response(resp, url, method)
-        return resp
+        return resp, resp.json()

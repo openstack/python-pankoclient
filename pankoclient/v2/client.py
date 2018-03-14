@@ -14,6 +14,7 @@
 #
 
 from pankoclient import client
+from pankoclient.exceptions import ClientException
 from pankoclient.v2 import capabilities
 from pankoclient.v2 import events
 
@@ -27,6 +28,8 @@ class Client(object):
 
     def __init__(self, session=None, service_type='event', **kwargs):
         """Initialize a new client for the Panko v2 API."""
+        if session is None:
+            raise ClientException(message='Session is required argument')
         self.http_client = client.SessionClient(
             session, service_type=service_type, **kwargs)
         self.capabilities = capabilities.CapabilitiesManager(self.http_client)
