@@ -145,7 +145,7 @@ def from_response(response, url, method=None):
     """Return an instance of one of the ClientException on an requests response.
 
     Usage::
-        resp, body = requests.request(...)
+        resp = requests.request(...)
         if resp.status_code != 200:
             raise exception_from_response(resp)
     """

@@ -42,16 +42,8 @@ def make_client(instance):
         region_name=instance.region_name,
         interface=instance.interface,
     )
-
-    kwargs = {'endpoint': endpoint,
-              'auth_url': instance.auth.auth_url,
-              'region_name': instance.region_name,
-              'username': instance.auth_ref.username}
-
-    if instance.session:
-        kwargs.update(session=instance.session)
-    else:
-        kwargs.update(token=instance.auth_ref.auth_token)
+    kwargs = {'session': instance.session,
+              'endpoint_override': endpoint}
 
     client = panko_client(**kwargs)
 
