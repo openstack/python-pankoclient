@@ -6,10 +6,6 @@ Python bindings to the OpenStack Panko API
     :target: https://pypi.org/project/pankoclient/
     :alt: Latest Version
 
-.. image:: https://img.shields.io/pypi/dm/pankoclient.svg
-    :target: https://pypi.org/project/pankoclient/
-    :alt: Downloads
-
 This is a client library for Panko built on the Panko API. It provides a
 Python API (the ``pankoclient`` module) and a OSC (the openstackclient CLI)
 command-line tool (``openstack event``).
