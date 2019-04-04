@@ -16,10 +16,9 @@
 """Panko v2 event action implementations"""
 import copy
 
-import json
-
 from osc_lib.command import command
 from osc_lib import utils
+from oslo_serialization import jsonutils
 
 
 class EventList(command.Lister):
@@ -94,7 +93,7 @@ class EventShow(command.ShowOne):
         ac = self.app.client_manager.event
         event = ac.event.get(message_id=parsed_args.message_id)
         data = copy.deepcopy(event._info)
-        data.update({'traits': json.dumps(data['traits'], indent=4)})
+        data.update({'traits': jsonutils.dumps(data['traits'], indent=4)})
         return self.dict2columns(data)
 
 
