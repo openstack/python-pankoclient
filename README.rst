@@ -23,4 +23,4 @@ command-line tool (``openstack event``).
 .. _Launchpad project: https://launchpad.net/python-pankoclient
 .. _Blueprints: https://blueprints.launchpad.net/python-pankoclient
 .. _Bugs: https://bugs.launchpad.net/python-pankoclient
-.. _Source: https://git.openstack.org/cgit/openstack/python-pankoclient
+.. _Source: https://opendev.org/openstack/python-pankoclient
