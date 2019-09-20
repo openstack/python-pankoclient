@@ -6,6 +6,7 @@ python-pankoclient Release Notes
    :maxdepth: 1
 
    unreleased
+   train
    stein
    queens
    pike
