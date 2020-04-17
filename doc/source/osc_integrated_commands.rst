@@ -2,7 +2,7 @@ The OSC CLI plugins
 ===================
 
 This program provides a set of event related commands which are performed by
- OSC `openstack program`_. The `OpenStackClient`_ project provide a plugin
+OSC `openstack program`_. The `OpenStackClient`_ project provide a plugin
 mechanism which supports loading other external projects' commands from
 clients library entry points.
 

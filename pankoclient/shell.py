@@ -51,7 +51,7 @@ class PankoShell(app.App):
             version=__version__,
             command_manager=PankoCommandManager(None),
             deferred_help=True,
-            )
+        )
 
         self._client = None
 
