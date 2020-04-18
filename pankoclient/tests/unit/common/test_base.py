@@ -14,8 +14,8 @@
 #
 
 import copy
+from unittest import mock
 
-import mock
 import six
 
 from pankoclient.common import base

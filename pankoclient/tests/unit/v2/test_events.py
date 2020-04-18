@@ -13,7 +13,7 @@
 #   under the License.
 #
 
-import mock
+from unittest import mock
 
 from pankoclient.tests.unit import base as test_base
 from pankoclient.v2 import events as events_mgr
