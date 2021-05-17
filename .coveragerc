@@ -1,6 +1,0 @@
-[run]
-branch = True
-source = pankoclient
-
-[report]
-ignore_errors = True

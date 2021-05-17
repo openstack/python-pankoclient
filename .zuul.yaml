@@ -1,5 +1,0 @@
-- project:
-    templates:
-      - openstack-python3-xena-jobs
-      - publish-openstack-docs-pti
-      - openstackclient-plugin-jobs
